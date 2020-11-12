@@ -22,7 +22,7 @@ export default {
     {
       format: 'cjs',
       file: 'dist/slickCarousel.cjs.js',
-    },
+    }
   ],
   plugins: [common(), node(), vue(), buble()]
 }

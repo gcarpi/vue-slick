@@ -26,12 +26,11 @@ export default {
   },
 
   destroyed: function() {
-    const self = this
-    function unslick() {
-      $(self.$el).slick('unslick');	    
-      self.$el.removeEventListener(unslick);
+    const unslick = () => {
+      $(this.$el).slick('unslick');	    
+      this.$el.removeEventListener('transitionend', unslick);
     };
-    self.$el.addEventListener('transitionend', unslick);
+    this.$el.addEventListener('transitionend', unslick);
   },
 
   methods: {
